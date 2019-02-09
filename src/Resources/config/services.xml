@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="true" autoconfigure="true" public="false" />
+
+        <service id="Skidata\Dta\Security\EncryptorInterface" class="Skidata\Dta\Security\RsaEncryptor">
+            <argument></argument>
+        </service>
+
+        <service id="Skidata\Dta\Security\ConfiguratorInterface" class="Skidata\Dta\Security\DtaConfigurator">
+            <argument></argument>
+            <argument></argument>
+        </service>
+
+        <service id="Skidata\Dta\Bridge\MessageBuilderInterface" class="Skidata\Dta\Bridge\MessageBuilder" />
+        <service id="Skidata\Dta\Bridge\TransceiverInterface" class="Skidata\Dta\Bridge\CurlTransceiver" />
+        <service id="Skidata\Dta\StrategyInterface" class="Skidata\Dta\EndpointStrategy" />
+        <service id="Skidata\Dta\GatewayInterface" class="Skidata\Dta\DtaGateway" />
+    </services>
+</container>
