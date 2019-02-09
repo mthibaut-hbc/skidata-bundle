@@ -1,0 +1,16 @@
+imports:
+  - { resource: 'vendor/symplify/easy-coding-standard/config/common.yml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/php71.yml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/psr2.yml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/clean-code.yml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/symfony.yml' }
+
+services:
+  SlamCsFixer\FinalInternalClassFixer: ~
+
+parameters:
+  exclude_checkers:
+    - PhpCsFixer\Fixer\ClassNotation\SelfAccessorFixer
+    - PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer
+    - PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer
+    - SlevomatCodingStandard\Sniffs\TypeHints\TypeHintDeclarationSniff
