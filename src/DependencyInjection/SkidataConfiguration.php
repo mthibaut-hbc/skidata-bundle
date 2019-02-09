@@ -18,7 +18,6 @@ final class SkidataConfiguration implements ConfigurationInterface
             ->children()
                 ->scalarNode('hostname')
                     ->defaultValue('http://skidata-integration.com/dta')
-                    ->isRequired()
                 ->end()
                 ->scalarNode('identifier')
                     ->isRequired()
