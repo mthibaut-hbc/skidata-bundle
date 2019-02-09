@@ -6,7 +6,6 @@ namespace SkidataBundle\DependencyInjection;
 
 use Skidata\Dta\Security\ConfiguratorInterface;
 use Skidata\Dta\Security\EncryptorInterface;
-use Symfony\Bundle\FrameworkBundle\DependencyInjection\Configuration;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -31,10 +30,8 @@ final class SkidataExtension extends Extension implements ExtensionInterface
 
     private function setupServices(array $configs, ContainerBuilder $containerBuilder): void
     {
-        $config = $this->processConfiguration(
-            new Configuration(false),
-            $configs
-        );
+        $configuration = new SkidataConfiguration(false);
+        $config = $this->processConfiguration($configuration, $configs);
 
         $finder = new DefinitionFinder();
 
