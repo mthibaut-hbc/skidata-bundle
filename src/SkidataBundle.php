@@ -10,10 +10,5 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class SkidataBundle extends Bundle
 {
-    public function build(ContainerBuilder $containerBuilder): void
-    {
-        parent::build($containerBuilder);
-
-        $containerBuilder->addCompilerPass(new CollectEndpointCompilerPass());
-    }
+    
 }
