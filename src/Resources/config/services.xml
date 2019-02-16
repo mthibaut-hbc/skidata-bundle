@@ -18,7 +18,7 @@
 
         <service id="Skidata\Dta\Bridge\MessageBuilderInterface" class="Skidata\Dta\Bridge\MessageBuilder" />
         <service id="Skidata\Dta\Bridge\TransceiverInterface" class="Skidata\Dta\Bridge\CurlTransceiver" />
-        <service id="Skidata\Dta\RequestBus" class="Skidata\Dta\DtaRequestBus" />
+        <service id="Skidata\Dta\RequestBusInterface" class="Skidata\Dta\DtaRequestBus" />
 
         <service id="Skidata\Dta\Node\Chip\ValidateChipEndpoint" class="Skidata\Dta\Node\Chip\ValidateChipEndpoint" />
     </services>
